@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>แจ้งลางาน - Test บอกกฎ</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff6600;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #3366ff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h2>📌 แจ้งขอลางาน</h2>
+
+    <!-- เลือกชื่อพนักงาน -->
+    <label>ชื่อพนักงาน</label>
+    <select id="employee" required>
+      <option value="">-- กรุณาเลือกชื่อ --</option>
+    </select>
+
+    <!-- เลือกประเภทลา -->
+    <label>ประเภทลา</label>
+    <select id="leaveType" required>
+      <option value="">-- กรุณาเลือกประเภทลา --</option>
+      <option>ลาป่วย</option>
+      <option>ลากิจ</option>
+      <option>ลาพักร้อน</option>
+      <option value="อื่นๆ">อื่น ๆ (โปรดระบุ)</option>
+    </select>
+
+    <!-- ช่องอื่นๆ -->
+    <input id="otherReason" placeholder="โปรดระบุ..." style="display:none;">
+
+    <!-- วันที่ -->
+    <label>วันที่เริ่มลา</label>
+    <input type="date" id="dateFrom" required>
+
+    <label>วันที่สิ้นสุดลา</label>
+    <input type="date" id="dateTo" required>
+
+    <!-- Submit -->
+    <button onclick="submitLeave()">ส่งคำขอลา ✅</button>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
